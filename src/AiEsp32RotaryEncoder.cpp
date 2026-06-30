@@ -169,19 +169,19 @@ void IRAM_ATTR AiEsp32RotaryEncoder::readButton_ISR()
 	else if (butt_state && !this->previous_butt_state)
 	{
 		this->previous_butt_state = true;
-		Serial.println("Button Pushed");
+		// Serial.println("Button Pushed");
 		buttonState = BUT_PUSHED;
 	}
 	else if (!butt_state && this->previous_butt_state)
 	{
 		this->previous_butt_state = false;
-		Serial.println("Button Released");
+		// Serial.println("Button Released");
 		buttonState = BUT_RELEASED;
 	}
 	else
 	{
 		buttonState = (butt_state ? BUT_DOWN : BUT_UP);
-		Serial.println(butt_state ? "BUT_DOWN" : "BUT_UP");
+		// Serial.println(butt_state ? "BUT_DOWN" : "BUT_UP");
 	}
 
 #if defined(ESP8266)
