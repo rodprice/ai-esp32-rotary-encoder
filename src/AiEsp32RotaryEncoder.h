@@ -72,7 +72,10 @@ public:
 		uint8_t encoderSteps = AIESP32ROTARYENCODER_DEFAULT_STEPS,
 		bool areEncoderPinsPulldown_forEsp32 = true);
 	void setBoundaries(long minValue = -100, long maxValue = 100, bool circleValues = false);
-	int correctionOffset = 2;
+        long getMinEncoderValue();
+        long getMaxEncoderValue();
+        long getEncoderSteps();
+        int correctionOffset = 2;
 	bool isButtonPulldown = false;
 	bool areEncoderPinsPulldownforEsp32 = true;
 #if defined(ESP8266)

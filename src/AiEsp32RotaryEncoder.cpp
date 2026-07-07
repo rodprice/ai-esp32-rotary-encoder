@@ -222,6 +222,18 @@ void AiEsp32RotaryEncoder::setBoundaries(long minEncoderValue, long maxEncoderVa
 	this->_circleValues = circleValues;
 }
 
+long AiEsp32RotaryEncoder::getMinEncoderValue() {
+        return this->_minEncoderValue / this->encoderSteps;
+}
+
+long AiEsp32RotaryEncoder::getMaxEncoderValue() {
+  return this->_maxEncoderValue / this->encoderSteps;;
+}
+
+long AiEsp32RotaryEncoder::getEncoderSteps() {
+        return this->encoderSteps;
+}
+
 long AiEsp32RotaryEncoder::readEncoder()
 {
 	// return (this->encoder0Pos / this->encoderSteps);
